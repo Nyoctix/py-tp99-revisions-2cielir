@@ -12,12 +12,22 @@ TAILLE = 8
 # --- creation de la barre eteinte ---
 barre = []
 # TODO
-
+def afficher_led(position):
+    # On éteint tout (8 LED éteintes)
+    led = ['.'] * 8
+    # On allume la LED à la position indiquée
+    led[position] = '#'
+    # On affiche la barre d'une ligne
+    print(" ".join(led))
 
 # --- aller ---
 # TODO : pour chaque position, tout eteindre, allumer la bonne LED,
 #        puis afficher la barre
+for position in range(8):
+    afficher_led(position)
 
 
 # --- retour ---
 # TODO : meme chose, mais avec un range() qui compte a l'envers
+for position in range(6, 0, -1):
+    afficher_led(position)

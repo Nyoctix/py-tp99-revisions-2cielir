@@ -18,9 +18,9 @@ ligne = int(input("Ligne : "))
 colonne = int(input("Colonne : "))
 
 # TODO : ecrire la structure alternative (if / elif / else)
-if ligne>7 or ligne<0 or colonne>7 or colonne<0:
+if ligne>TAILLE-1 or ligne<0 or colonne>TAILLE-1 or colonne<0:
     print("Erreur : coordonnees hors de la matrice")
-elif ligne==0 or colonne==0 or ligne==7 or colonne==7:
+elif ligne==0 or colonne==0 or ligne==TAILLE-1 or colonne==TAILLE-1:
     print("LED de bordure")
 elif colonne==ligne:
     print("LED de la diagonale")
