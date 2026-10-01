@@ -23,7 +23,7 @@ def afficher_led(position):
 # --- aller ---
 # TODO : pour chaque position, tout eteindre, allumer la bonne LED,
 #        puis afficher la barre
-for position in range(8):
+for position in range(TAILLE):
     afficher_led(position)
 
 
