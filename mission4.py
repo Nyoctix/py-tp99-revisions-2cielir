@@ -16,14 +16,21 @@ matrice = []
 for i in range(TAILLE):
     ligne = []
     for j in range(TAILLE):
-        if i == 0 or j == 0 or i == TAILLE-1 or j == TAILLE-1:
-            ligne.append(1)
-        else:
+        #if i == 0 or j == 0 or i == TAILLE-1 or j == TAILLE-1:
+         #   ligne.append(1)
+        #else:
             ligne.append(0)
     matrice.append(ligne)
 
 # TODO : allumer les LED du pourtour
 #        (premiere ligne, derniere ligne, premiere colonne, derniere colonne)
+
+for i in range(TAILLE):
+    matrice[i][0] = 1
+    matrice[i][TAILLE -1] =1
+    matrice[0][i]=1
+    matrice[TAILLE -1][i]=1
+
 for i in range(TAILLE):
     texte = ""
     for j in range(TAILLE):
@@ -47,6 +54,9 @@ for i in range(TAILLE):
 # TODO : allumer les deux diagonales.
 #        Une seule boucle suffit : pour la ligne i, quelles colonnes ?
 
+for i in range(TAILLE):
+    matrice[i][i] = 1
+    matrice[i][TAILLE - 1 - i] = 1
 
 print()
 for i in range(TAILLE):
@@ -58,9 +68,14 @@ for i in range(TAILLE):
             texte = texte + ". "
     print(texte)
 
+
 # ---------- Figure 3 : le logo (cadre + croix) ----------
 # TODO : sans effacer la croix, rallumer le cadre par-dessus
-
+for i in range(TAILLE):
+    matrice[i][0] = 1
+    matrice[i][TAILLE -1] =1
+    matrice[0][i]=1
+    matrice[TAILLE -1][i]=1
 
 print()
 for i in range(TAILLE):
