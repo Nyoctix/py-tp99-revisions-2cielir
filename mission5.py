@@ -38,15 +38,45 @@ print()
 
 # --- 1. nombre total de LED allumees ---
 # TODO
+Led_On = 0
+for i in range(TAILLE):
+    texte = ""
+    for j in range(TAILLE):
+        if matrice[i][j] == 1:
+            Led_On += 1
+
+print( "Nombre de led allumée :", Led_On )
 
 
 # --- 2. courant total consomme (en mA) ---
 # TODO
-
+print("Total en mA :", Led_On*COURANT_LED)
 
 # --- 3. ligne la plus allumee ---
 # TODO : compter les LED de chaque ligne et retenir la meilleure
+record_led = 0
+Max_On_C = 0
+for i in range(TAILLE):
+    Led_On = 0
+    for j in range(TAILLE):
+        if matrice[i][j] == 1:
+            Led_On += 1
+    if Led_On > record_led:
+        record_led = Led_On
+        Max_On_C = i
+print("Ligne la plus allumee : ", most_allumed_line, "(", record_led, "LED)")
 
 
 # --- 4. colonne la plus allumee ---
 # TODO : attention, ici la boucle des colonnes est a l'exterieur
+record_led = 0
+Max_On_L = 0
+for j in range(TAILLE):
+    Led_On = 0
+    for i in range(TAILLE):
+        if matrice[i][j] == 1:
+            Led_On += 1
+    if Led_On > record_led:
+        record_led = Led_On
+        Max_On_L = j
+print("Colonne la plus allumee : ", most_allumed_line, "(", record_led, "LED)")
